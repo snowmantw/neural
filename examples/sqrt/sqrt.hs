@@ -36,6 +36,7 @@ main = do
         pure 
         vhead
 
+    -- This time it get mean, not maximum of the errors (in sine example it use maximum).
     getErr ts = let m = tsModel ts in mean [abs (sqrt x - model m x) | x <- [0, 0.1 .. 4]]
 
     report ts = do
